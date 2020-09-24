@@ -1,6 +1,5 @@
 // Fetch Data
 
-// const CHUNK_SIZE = 5;
 const baseUrl = "https://api.lyrics.ovh";
 const suggestEndPoint = "suggest";
 const fetchSuggestions = async (query) => {
@@ -12,7 +11,6 @@ const fetchLyrics = async ({ artist, title, albumTitle }) => {
   const response = await fetch(`${baseUrl}/v1/${artist}/${title}`);
   const lyricsData = await response.json();
   await renderLyricsContainer(title, lyricsData, albumTitle, artist);
-  //   await
 };
 
 // add listeners
@@ -92,22 +90,21 @@ searchResults.addEventListener("click", (event) => {
   fetchLyrics(song);
 });
 
-// const renderLyrics = (lyrics) => {
-//   console.log(lyrics);
-//   let lyricsString = "";
+const renderLyrics = (lyrics) => {
+  let lyricsString = "";
 
-//   for (let char in lyrics) {
-//     if (char === "\n") {
-//       lyricsString += `<br/>`;
-//     } else {
-//       lyricsString += char;
-//     }
-//   }
-//   return lyricsString;
-// };
+  for (let char of lyrics) {
+    if (char === "\n") {
+      lyricsString += `<br/>`;
+    } else {
+      lyricsString += char;
+    }
+  }
+  return lyricsString;
+};
 const renderLyricsContainer = (title, lyricsData, albumTitle, artist) => {
   unSetLoader();
-  //   const formattedLyrics = lyricsData?.lyrics && renderLyrics(lyricsData.lyrics);
+  const formattedLyrics = lyricsData?.lyrics && renderLyrics(lyricsData.lyrics);
 
   backdrop.className = "backdrop";
   const details = `<div class="details-card">
@@ -124,7 +121,7 @@ const renderLyricsContainer = (title, lyricsData, albumTitle, artist) => {
               <div class="details-card-content" onclick="event.stopPropagation()">
                 
                  
-                <p > ${lyricsData?.lyrics} </p> 
+                <p > ${formattedLyrics} </p> 
               </div>
               </div>`;
   const notFound = () =>
