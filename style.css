@@ -60,7 +60,7 @@ body {
   border-top: 5px solid rgba(255, 255, 255, 0.5);
   padding: 20px;
   box-sizing: content-box;
-  max-height: 800px;
+  max-height: 600px;
   scrollbar-color: rgba(255, 255, 255, 0.5);
 }
 .result-card {
