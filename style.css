@@ -61,8 +61,7 @@ body {
   padding: 20px;
   box-sizing: content-box;
   max-height: 800px;
-  margin-bottom:50px;
-  scrollbar-color: rgba(255, 255, 255, 0.5);
+  scrollbar-color: rgb(255, 255, 255);
 }
 .result-card {
   display: flex;
