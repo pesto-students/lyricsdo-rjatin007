@@ -131,7 +131,7 @@ const renderLyricsContainer = (title, lyricsData, albumTitle, artist) => {
     renderDialog(
       "Sorry! we cannot retrieve lyrics of this song at the moment. "
     );
-  console.log(lyricsData);
+
   if (lyricsData?.lyrics) {
     backdrop.innerHTML = details;
   } else {
