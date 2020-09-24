@@ -61,6 +61,7 @@ body {
   padding: 20px;
   box-sizing: content-box;
   max-height: 600px;
+  margin-bottom:50px;
   scrollbar-color: rgba(255, 255, 255, 0.5);
 }
 .result-card {
